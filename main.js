@@ -11,16 +11,14 @@
     };
     spinner();
 
-
     // Fixed Navbar
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
-            $('.fixed-top .container').addClass('shadow-sm').css('max-width', '100%');
+            $('.fixed-top').addClass('shadow-sm').css('max-width', '100%');
         } else {
-            $('.fixed-top .container').removeClass('shadow-sm').css('max-width', '85%');
+            $('.fixed-top').removeClass('shadow-sm').css('max-width', '85%');
         }
     });
-
 
     // Donation Progress Bar Animation
     $('.progress').waypoint(function () {
@@ -29,36 +27,29 @@
         });
     }, { offset: '80%' });
 
-
     // Facts Counter Animation
     $('[data-toggle="counter-up"]').counterUp({
         delay: 5,
         time: 2000
     });
 
-
     // Event Carousel
     $(".event-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1000,
         center: false,
-        dots: false,
+        dots: true,
         loop: true,
         margin: 25,
-        nav: true,
-        navText: [
-            '<i class="fa fa-chevron-left"></i>',
-            '<i class="fa fa-chevron-right"></i>'
-        ],
+        nav: false,
         responsiveClass: true,
         responsive: {
             0: { items: 1 },
-            768: { items: 1 },
-            992: { items: 2 },
-            1200: { items: 3 }
+            768: { items: 2 },
+            992: { items: 3 },
+            1200: { items: 4 }
         }
     });
-
 
     // Back to Top Button
     $(window).scroll(function () {
